@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      insert information
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>First Name </ion-label>
+      <ion-input type="text"[(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Last Name  </ion-label>
+        <ion-input type="text"[(ngModel)]="lname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating> Age</ion-label>
+          <ion-input type="text"[(ngModel)]="age"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Department </ion-label>
+            <ion-input type="text"[(ngModel)]="dept"></ion-input>
+          </ion-item>
+          <button ion-button color="secondary" (click)=createperson(name,lname,age,dept) full>
+          <ion-icon name="md-person-add" ></ion-icon>
+             Add Person</button>
+  </ion-list>
+</ion-content>

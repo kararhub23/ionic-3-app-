@@ -1,0 +1,51 @@
+<ion-header >
+  <ion-navbar>
+    <ion-title>persons DB </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <ion-list *ngFor="let person of persons | async ">
+  <ion-item-sliding>
+      <ion-item >
+        <ion-avatar item-start>
+            <img src="assets/imgs/people.png">
+        </ion-avatar>
+        <h3>{{ person.name }} {{person.lname}}</h3>
+       <h4> age : {{person.age}} - Dept : {{person.dept}}</h4>
+       <p>ID : {{person.key}}</p>
+      </ion-item>
+    <ion-item-options side="right">
+      <button ion-button color="danger" (click)="delete11(person.key ,person.name , person.lname)">
+        <ion-icon ios="ios-close" md="md-close"></ion-icon>
+        delete
+      </button>
+      <button ion-button color="primary"
+      (click)="update( person.key , person.name  , person.lname  , person.age , person.dept )">
+        <ion-icon name="ios-create-outline"></ion-icon>
+        Edite
+      </button>
+    </ion-item-options>
+    <ion-item-options side="left">
+      <button ion-button color="primary">
+        <ion-icon name="mail"></ion-icon>
+        Email
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
